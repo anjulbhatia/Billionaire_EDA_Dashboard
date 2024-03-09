@@ -25,6 +25,11 @@ You can find it over by clicking the given link. [Dataset](https://www.kaggle.co
 * Determine the countries with the highest concentration of billionaires.
 * Visualize the distribution of billionaires across different countries.
 
+# Dashboard 
+<img width="959" alt="image" src="https://github.com/anjulbhatia/Billionaire_EDA_Dashboard/assets/148487464/9591aa47-ae36-45ce-a770-5a5713307b7a">
+
+<img width="946" alt="image" src="https://github.com/anjulbhatia/Billionaire_EDA_Dashboard/assets/148487464/3168c57a-d75b-4279-bfbb-a5554492286a">
+
 # Analysis and Visualisation
 
 ### Distribution of Wealth by Age
