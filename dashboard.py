@@ -103,8 +103,8 @@ components.html(f"""
 <h2 class="text-center mb-4 text-2xl font-bold">Billionaire Analysis</h2>
 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
     <div class="bg-white rounded-lg p-4 shadow-md transition duration-500 ease-in-out transform hover:scale-105 hover:shadow-lg">
-        <p class="text-3xl font-bold text-center text-blue-500">{filtered_df.shape[0]}</p>
         <h3 class="text-lg font-semibold mb-2 text-center">Total Billionaires</h3>
+        <p class="text-3xl font-bold text-center text-blue-500">{filtered_df.shape[0]}</p>
     </div>
     <div class="bg-white rounded-lg p-4 shadow-md transition duration-500 ease-in-out transform hover:scale-105 hover:shadow-lg">
         <h3 class="text-lg font-semibold mb-2 text-center">Total Net Worth (in billion $)</h3>
@@ -135,7 +135,7 @@ components.html(f"""
         <p class="text-3xl font-bold text-center text-orange-500">{df['selfMade'].value_counts(normalize=True).loc[True]:.2f}</p>
     </div>
 </div>
-""", height=200)
+""", height=400)
 
 # Create subplots with 2 rows and 2 columns
 fig, axes = plt.subplots(2, 2, figsize=(12, 10))
@@ -152,14 +152,14 @@ axes[0, 1].set_title('Self-made Billionaires')
 
 # Bar graph for top 10 countries with billionaires
 top_countries = df['country'].value_counts().head(10)
-sns.barplot(x=top_countries.values, y=top_countries.index, ax=axes[1, 0], palette='viridis')
+sns.barplot(x=top_countries.values, y=top_countries.index, ax=axes[1, 0], palette='flare')
 axes[1, 0].set_xlabel('Number of Billionaires')
 axes[1, 0].set_ylabel('Country')
 axes[1, 0].set_title('Top 10 Countries with Billionaires')
 
 # Bar graph for top industries with billionaires
 top_industries = df['industries'].value_counts().head(10)
-sns.barplot(x=top_industries.values, y=top_industries.index, ax=axes[1, 1], palette='viridis')
+sns.barplot(x=top_industries.values, y=top_industries.index, ax=axes[1, 1], palette='flare')
 axes[1, 1].set_xlabel('Number of Billionaires')
 axes[1, 1].set_ylabel('Industry')
 axes[1, 1].set_title('Top 10 Industries with Billionaires')
@@ -169,7 +169,7 @@ plt.show()
 
 # Bar graph for top 10 countries with billionaires
 plt.figure(figsize=(12, 6))
-sns.countplot(y='country', data=df, order=df['country'].value_counts().head(10).index, palette='viridis')
+sns.countplot(y='country', data=df, order=df['country'].value_counts().head(10).index, palette='flare')
 plt.title('Top 10 Countries with Billionaires')
 plt.xlabel('Number of Billionaires')
 plt.ylabel('Country')
@@ -177,7 +177,7 @@ st.pyplot()
 
 # Bar graph for top industries with billionaires
 plt.figure(figsize=(12, 6))
-sns.countplot(y='industries', data=df, order=df['industries'].value_counts().head(10).index, palette='viridis')
+sns.countplot(y='industries', data=df, order=df['industries'].value_counts().head(10).index, palette='flare')
 plt.title('Top Industries with Billionaires')
 plt.xlabel('Number of Billionaires')
 plt.ylabel('Industry')
